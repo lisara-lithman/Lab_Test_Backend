@@ -22,11 +22,18 @@ const itemSchema = new mongoose.Schema(
       required: [true, "Description is required"],
       trim: true,
     },
+     customerReview: {
+      type: Number,
+      required: [true, "Customer review is required"],
+      min: [0, "Customer review cannot be negative"],
+    },
+    
     imageUrl: {
       type: String,
       default: "",
       trim: true,
     },
+
   },
   { timestamps: true }
 );
